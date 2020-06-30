@@ -14,6 +14,10 @@
           </td>
           <td>{{ result['Facility Telephone Number'] }}</td>
         </tr>
+        <tr>
+          <td><b-icon icon="person-circle"></b-icon></td>
+          <td>{{ result['Facility Capacity'] }}</td>
+        </tr>
       </table>
     </b-card-text>
   </b-card>

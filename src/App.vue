@@ -3,6 +3,7 @@
     <b-container>
       <app-header></app-header>
       <app-form @searchSubmitted="result = $event" @update:filters="filters = $event" @formReset="formReset()"></app-form>
+      <app-gmap v-if="result" :results="this.result"></app-gmap>
       <app-search-summary v-if="result" :results="this.result" :filters="this.filters"></app-search-summary>
       <app-results-list :results="this.result"></app-results-list>
     </b-container>
@@ -13,6 +14,7 @@
 import Header from './components/Header.vue'
 import Form from './components/Form.vue'
 import SearchSummary from './components/SearchSummary.vue'
+import Gmap from './components/Map.vue'
 import ResultsList from './components/results-list/ResultsList.vue'
 
 export default {
@@ -22,6 +24,7 @@ export default {
     appForm: Form,
     appSearchSummary: SearchSummary,
     appResultsList: ResultsList,
+    appGmap: Gmap,
   },
   data () {
     return {

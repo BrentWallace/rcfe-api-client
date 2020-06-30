@@ -2,9 +2,9 @@
   <b-row>
     <b-col>
       <hr />
-      <h2 class="mb-4">Search Summary</h2>
-      <p><strong>Filters Applied</strong></p>
-      <ul>
+      <h2 class="mb-4 p-3 bg-secondary text-light">Search Summary</h2>
+      <p><strong>Filters Applied <b-icon icon="filter-left"></b-icon></strong></p>
+      <ul class="list-unstyled">
         <li v-for="(value, key) in filters" :key="key">{{ key }} - {{ value }}</li>
       </ul>
       <p>

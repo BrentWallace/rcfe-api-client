@@ -2,7 +2,7 @@
   <b-form @submit.prevent="onSubmit" @reset.prevent="onReset">
     <b-form-row>
       <b-col>
-        <p class="bg-secondary text-light text-center">Search Filters</p>
+        <p class="bg-secondary text-light text-center p-2">Search Filters</p>
       </b-col>
     </b-form-row>
     <b-form-row>

@@ -18,6 +18,18 @@
           <td><b-icon icon="person-circle"></b-icon></td>
           <td>{{ result['Facility Capacity'] }}</td>
         </tr>
+        <tr>
+          <td>Status: </td>
+          <td>{{ result['Facility Status'] }}</td>
+        </tr>
+        <tr>
+          <td>First Licensed:</td>
+          <td>{{ result['License First Date'] }}</td>
+        </tr>
+        <tr>
+          <td><b-icon icon="link45deg"></b-icon></td>
+          <td><a :href="link" target="_blank"><b-button variant="primary">Link to DSS Page</b-button></a></td>
+        </tr>
       </table>
     </b-card-text>
   </b-card>
@@ -25,8 +37,20 @@
 
 <script>
 export default {
-  props: ['result']
-};
+  props: ['result'],
+  computed: {
+    link: function() {
+      const baseURL = 'https://www.ccld.dss.ca.gov/carefacilitysearch/FacDetail/';
+      let facilityNumber = this.result['Facility Number'];
+
+      if ( facilityNumber.length < 10 ) {
+        facilityNumber = `0${facilityNumber}`;
+      }
+
+      return `${baseURL}${facilityNumber}`
+    }
+  }
+}
 </script>
 
 <style scoped>

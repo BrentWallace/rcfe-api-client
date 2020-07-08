@@ -1,5 +1,9 @@
 # client
 
+This the front end for my server at https://github.com/BrentWallace/rcfe-api-server
+
+The client is built with VueJS and communicates through express to a NodeJS backend.
+
 ## Project setup
 ```
 npm install
